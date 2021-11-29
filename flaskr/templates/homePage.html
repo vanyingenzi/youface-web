@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+    <div class="front-view">
+        <div class="home-header">
+            <h1 class="animate__animated animate__slideInLeft">YouFace Studio</h1>
+            <h2>Pour Les Meilleurs Services Digitaux</h2>
+            <div>
+                <p>Nous <span class="color-orange animate__animated animate__flipInY animate__delay-2s">filmons, réalisons, créons </span>
+                    tout contenu, variant des cérémonies de mariage aux logos, même les flyers d'événements.</p>
+            </div>
+        </div>
+    </div>
+    <h2>Nos services</h2>
+    <section id="services" class="services row-layout shadow animate__animated animate__fadeIn animate__slow">
+        <div class="service">
+            <div class="img-container">
+                <img src="{{ url_for('static', filename='images/free_copyright/pexels-avonne-stalling-3916019.jpg') }}" alt="image">
+            </div>
+            <div class="column-layout">
+                <h3>Marriage</h3>
+                <p>
+                    Le temps est le fondement des moments que nous vivons dans la vie. Nous créons un visuel intemporel.
+                    C'est vraiment notre passion d'organiser une expérience aussi unique et de nous immerger dans vos joies,
+                    vos sentiments et vos valeurs. Notre objectif est de documenter chaque moment qui définit votre amour
+                    ce jour le plus important.
+                </p>
+                <div>
+                    <button onclick="window.location.href='/contact'">En savoir plus</button>
+                    <button onclick="window.location.href='/gallery#weddings'">Voir d'autres photos</button>
+                </div>
+            </div>
+        </div>
+        <div class="service">
+            <div class="img-container">
+                <img src="{{ url_for('static', filename='images/free_copyright/pexels-yuliya-kosolapova-3270230.jpg') }}" alt="image">
+            </div>
+            <div class="column-layout">
+                <h3>Portrait</h3>
+                <p>
+                    La photographie de portrait est l'un des genres de photographie les plus populaires, pour une bonne raison.
+                    Avec nos compétences des photographes portraitistes sont capables de capturer la personnalité et les émotions des gens.
+                </p>
+                <div>
+                    <button onclick="window.location.href='/contact'">En savoir plus</button>
+                    <button onclick="window.location.href='/gallery#weddings'">Voir d'autres photos</button>
+                </div>
+            </div>
+        </div>
+        <div class="service">
+            <div class="img-container">
+                <img src="{{ url_for('static', filename='images/our_work/flyer.jfif') }}" alt="image">
+            </div>
+            <div class="column-layout">
+                <h3>Affiche d'événement</h3>
+                <p>
+                    Avec nos affiche d'événement professionnel, vous allez pouvoir vous démarquer et attirer un public plus large.
+                </p>
+                <div>
+                    <button onclick="window.location.href='/contact'">En savoir plus</button>
+                    <button onclick="window.location.href='/gallery#weddings'">Voir d'autres photos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

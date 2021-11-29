@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='/images/youface.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='/images/youface.ico') }}" />
+    <title>{% block title %}{% endblock %}  | YouFace Studio</title>
+    <!--    CSS Imports-->
+    <link rel="stylesheet" media="screen and (min-width: 601px)" href="{{ url_for('static', filename='/css/desktopStyle.css') }}">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{ url_for('static', filename='/css/mobileStyle.css') }}">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Tangerine'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!--    JavaScript Imports-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='/js/homepage.js') }}"></script>
+    {% block head %}{% endblock head %}
+    <script data-ad-client="ca-pub-4776577338144836" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+    <div class="sideMenuContainer">
+        <nav class="sideMenuNav">
+            <a href="/">Home</a>
+            <a href="/#services">Nos Services</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </div>
+    <button id="menuCloseButton">X Menu</button>
+    <button id="menuOpenButton" hidden>≡ Menu</button>
+    <div class="page-content">
+        {% block content %}{% endblock %}
+        <div class="footer-div">
+            <p>Website by YouFace Studios | YouFace Studios © 2021</p>
+        </div>
+    </div>
+</body>
+</html>

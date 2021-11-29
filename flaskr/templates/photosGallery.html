@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Gallery{% endblock title %}
+{% block content %}
+    <section id="photos-gallery" class="column-layout full-view-height">
+        <h2>Gallery</h2>
+        <p>Ici vous trouverez des photos des evenements que nous avons pris recemment.
+        </p>
+        {% for category in gallery %}
+            <h3 id="{{ category }}" class="underline">{{ category[0].upper()+category[1:] }}</h3>
+             <section class="photos-thumbnail-grid animate__animated animate__fadeIn animate__slow">
+            {% for event in gallery[category] %}
+                <div class="column-layout shadow">
+                    <div>
+                        <img src="{{ url_for('gallery.static', filename=event.directory+event.image) }}" alt="">
+                    </div>
+                    <p id="name">{{event.name}}<p>
+                    <p>{{event.date}}</p>
+                </div>
+            {% endfor %}
+            </section>
+        {% endfor %}
+    </section>
+    <script src="{{ url_for('static', filename='/js/photosGallery.js') }}"></script>
+{% endblock content %}

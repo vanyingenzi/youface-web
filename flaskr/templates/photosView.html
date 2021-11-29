@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} {{ event_name }} {% endblock title %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/lightbox.min.css') }}">
+    <script src="{{ url_for('static', filename='/js/lightbox-plus-jquery.min.js') }}" ></script>
+{% endblock head %}
+{% block content %}
+    <h2 class="color-orange">{{ event_name }}</h2>
+    <hr>
+    <div class="view-page" >
+        {% for image in images %}
+        <a class="example-image-link" href="{{ url_for('gallery.static', filename=image) }}" data-lightbox="images-set">
+            <img class="example-image" src="{{ url_for('gallery.static', filename=image) }}" alt=""/>
+        </a>
+        {% endfor %}
+    </div>
+    <h2>
+        <a href={{start}}>La suite</a>
+        <a href="/gallery/download/{{ event_name }}">Telecharger</a>
+    </h2>
+{% endblock content %}

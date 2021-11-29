@@ -1,0 +1,293 @@
+/** Desktop css*/
+:root{
+    --orange : #FFBA00;
+    --darkgrey: #707070;
+    --greenblue: #40BAD5;
+    --lightgrey: #EEEEEE;
+}
+html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #363636;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    background-color: var(--lightgrey);
+    font-family: "Montserrat", sans-serif;
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-areas: "sidebar content";
+}
+body .withoutSideNav{
+    display: flex;
+    flex-direction: column;
+}
+body img{
+    margin: auto;
+}
+h1{
+    font-size: 100px;
+    font-weight: bolder;
+    color: var(--orange);
+    margin: 2px 0;
+}
+
+button{
+    background-color: var(--orange);
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
+    border-width: 0;
+    padding: 10px;
+}
+.sideMenuContainer{
+    grid-area: sidebar;
+    min-height: 100vh;
+}
+.sideMenuContainer .sideMenuNav{
+    position: fixed;
+    width: 250px;
+    height: 60vh;
+    display: flex;
+    padding: 20vh 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 10px 0 25px -22px #5E5E5E;
+    z-index: 2;
+}
+.sideMenuContainer .sideMenuNav a{
+    width: 90%;
+    text-align: right;
+    text-decoration: none;
+    color: black;
+}
+.sideMenuContainer .sideMenuNav a:hover{
+    color: var(--orange);
+}
+#menuCloseButton{
+    position: fixed;
+    top: 40px;
+    left: 170px;
+    z-index: 10;
+}
+#menuOpenButton{
+    position: fixed;
+    top: 40px;
+    left: 10px;
+    z-index: 10;
+}
+.page-content{
+    grid-column: content;
+    width: 100%;
+    overflow: hidden;
+}
+.page-content p{
+    width: 80%;
+}
+.photos-view img{
+    max-width: 90%;
+    object-fit: contain;
+}
+.front-view{
+    height: 90vh;
+}
+.front-view .home-header{
+    margin: 25vh auto;
+    height: 40vh;
+}
+.front-view .home-header h2{
+    font-weight: lighter;
+}
+.front-view img{
+    margin: 10% auto;
+}
+.live-thumbnails-grid{
+    width: 80%;
+    margin: 0 auto 100px auto;
+}
+.live-thumbnails-grid div{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    margin: 20px;
+    background-color: #5E5E5E;
+    -webkit-box-shadow: 0px 0px 33px -23px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 33px -23px rgba(0,0,0,1);
+    box-shadow: 0px 0px 33px -23px rgba(0,0,0,1);
+}
+.photos-thumbnail-grid{
+    max-width: 100%;
+    margin: 0 auto 100px auto;
+    grid-gap: 5%;
+    display: grid;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+}
+
+.photos-thumbnail-grid div{
+    width: 100%;
+}
+.photos-thumbnail-grid div div{
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    height: 600px;
+    margin: auto;
+}
+.photos-thumbnail-grid div img{
+    height: 100%;
+    object-fit: contain;
+    overflow: hidden;
+}
+.photos-thumbnail-grid p{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+.footer-div p{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+ }
+.photos-view-flex{
+    width: 80%;
+    height: auto;
+    display: flex;
+    overflow: auto;
+    justify-content: space-evenly;
+    flex-flow: column wrap;
+}
+form{
+    width: min(70%, 450px);
+    height: 80vh;
+    background-color: var(--greenblue);
+    border-radius: 2%;
+    margin: 10vh 0;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.page-content form p{
+    width: 80%;
+}
+form input{
+    width: 80%;
+    height: 30px;
+    border-width: 0;
+}
+form input[type="submit"]{
+    color: black;
+    background-color: var(--orange);
+}
+.services{
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0;
+}
+.services h3{
+    text-decoration: underline;
+    font-family: "Tangerine", serif ;
+    font-size: 42px;
+    font-weight: lighter;
+}
+.services .service{
+    display: grid;
+    height: 600px;
+    grid-template-columns: 300px 400px;
+    grid-gap: 30px;
+    grid-template-areas: "image description";
+}
+.services .service .img-container{
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+}
+.services .service img{
+    height: 100%;
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+    object-fit: contain;
+}
+
+.view-page{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+.view-page img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.people p{
+    width: 90%;
+    margin-left: 5%;
+}
+.people img {
+    width: 300px;
+}
+
+.contact p{
+    text-align: center;
+}
+
+.column-layout{
+    display: flex;
+    flex-direction: column;
+}
+.row-layout{
+    display: flex;
+    flex-direction: row;
+}
+.three-grid-layout{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+}
+.full-page-blur{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    z-index: 11;
+    background-color: transparent;
+}
+.full-view-width{
+    width: 100vw;
+}
+.full-view-height{
+    height: 100%;
+}
+.align-center{
+    align-items: center;
+    justify-items: center;
+}
+.color-orange{
+    color: var(--orange);
+}
+.shadow{
+    -webkit-box-shadow: 0px 0px 33px -23px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 33px -23px rgba(0,0,0,1);
+    box-shadow: 0px 0px 40px -23px rgba(0,0,0,1);
+}
+.underline{
+    text-decoration: underline;
+}

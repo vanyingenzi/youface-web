@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Passcode{% endblock title %}
+{% block content %}
+    <section class="column-layout align-center">
+        <form method="post" id="passwordInputForm" class="animate__animated animate__zoomIn column-layout shadow">
+            {% if error_message %}
+                <h4 class="color-orange">{{ error_message }}</h4>
+            {% endif %}
+            <p>Afin d’avoir accès aux photos de <span>{{event_name}}</span>, veillez entrer le mot de passe correspondant, dans le cadre ci-dessous. ...</p>
+            <input type="text" name="passcode" placeholder="Entrez le mot-de-passe">
+            <input type="submit" value="Soumettez">
+        </form>
+    </section>
+    <script src="/js/homepage.js"></script>
+    <script type="text/javascript">
+        $(document).ready(() => {
+            const form = $("form");
+            form.attr("action", window.location.pathname );
+        });
+    </script>
+{% endblock content %}
